@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Companion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #6200ea;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #3700b3;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+        }
+        nav a:hover {
+            background: #bb86fc;
+        }
+        main {
+            padding: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+        footer {
+            text-align: center;
+            background: #3700b3;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mental Health Companion</h1>
+    <p>Your space for support and well-being</p>
+</header>
+
+<nav>
+    <a href="#meditation">Meditation</a>
+    <a href="#journal">Journal</a>
+    <a href="#chatbot">Chatbot</a>
+    <a href="#resources">Resources</a>
+    <a href="#groups">Support Groups</a>
+</nav>
+
+<main>
+    <section id="meditation" class="card">
+        <h2>Guided Meditation</h2>
+        <p>Relax and rejuvenate with our guided meditation sessions.</p>
+        <button onclick="alert('Starting Meditation...')">Start Meditation</button>
+    </section>
+
+    <section id="journal" class="card">
+        <h2>Journal and Mood Tracker</h2>
+        <form>
+            <textarea placeholder="Write your thoughts here..." style="width: 100%; height: 100px;"></textarea>
+            <br>
+            <label for="mood">Mood:</label>
+            <select id="mood">
+                <option>Happy</option>
+                <option>Sad</option>
+                <option>Stressed</option>
+                <option>Calm</option>
+            </select>
+            <br><br>
+            <button type="submit">Save Entry</button>
+        </form>
+    </section>
+
+    <section id="chatbot" class="card">
+        <h2>Chatbot</h2>
+        <p>Chat with our emotional support bot.</p>
+        <div>
+            <input type="text" id="userMessage" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div id="chatResponse" style="margin-top: 1rem; background: #e0e0e0; padding: 1rem; border-radius: 5px;"></div>
+    </section>
+
+    <section id="resources" class="card">
+        <h2>Therapy and Self-Help Resources</h2>
+        <ul>
+            <li><a href="https://www.betterhelp.com" target="_blank">BetterHelp</a></li>
+            <li><a href="https://www.talkspace.com" target="_blank">Talkspace</a></li>
+            <li><a href="https://suicidepreventionlifeline.org" target="_blank">National Suicide Prevention Hotline</a></li>
+        </ul>
+    </section>
+
+    <section id="groups" class="card">
+        <h2>Peer Support Groups</h2>
+        <ul>
+            <li>Anxiety Support: Every Monday at 6 PM</li>
+            <li>Stress Relief: Every Wednesday at 7 PM</li>
+            <li>Depression Support: Every Friday at 5 PM</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Mental Health Companion. All rights reserved.</p>
+</footer>
+
+<script>
+    function sendMessage() {
+        const userMessage = document.getElementById('userMessage').value;
+        const responseDiv = document.getElementById('chatResponse');
+        let response = "I'm here to listen. Can you tell me more?";
+
+        if (userMessage.includes('hello')) {
+            response = "Hi! How can I support you today?";
+        } else if (userMessage.includes('sad')) {
+            response = "I'm sorry to hear that. Would you like some tips for relaxation?";
+        } else if (userMessage.includes('thank you')) {
+            response = "You're welcome! Take care.";
+        }
+
+        responseDiv.textContent = response;
+    }
+</script>
+
+</body>
+</html>
